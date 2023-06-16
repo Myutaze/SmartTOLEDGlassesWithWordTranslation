@@ -17,3 +17,6 @@
 # Button
 
 <img src = "https://github.com/Myutaze/SmartTOLEDGlassesWithWordTranslation/assets/123553691/b07cc3a5-81a3-4d73-b47a-300daae7950e" width = "300">
+# A PC
+
+You can use your own pc.
