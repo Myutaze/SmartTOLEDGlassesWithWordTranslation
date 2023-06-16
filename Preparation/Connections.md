@@ -29,4 +29,4 @@ There are 7 pins on the TOLED board: GND, VCC, SCL, SDA(or SDAIN), RST, SA0(or D
 | :-------------: | :-------------: |
 |     VCC       |       3.3V     |
 |     GND       |      Any GND Pin      |
-|     OUT        |      GPIO20   |
+|     OUT        |      GPIO10   |
