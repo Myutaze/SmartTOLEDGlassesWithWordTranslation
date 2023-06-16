@@ -39,4 +39,8 @@ There are 7 pins on the TOLED board: GND, VCC, SCL, SDA(or SDAIN), RST, SA0(or D
 |     Any Left Side Pin       |       GPIO20     |
 |     Any Right Side Pin      |       GPIO21      |
 
+## Google Drive
+
+You need a Google Drive account.
+
 
