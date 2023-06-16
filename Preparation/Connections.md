@@ -22,7 +22,7 @@ There are 7 pins on the TOLED board: GND, VCC, SCL, SDA(or SDAIN), RST, SA0(or D
 |     VCC       |       Any 5V pin      |
 |     RST       |      GPIO04    |
 
-# Infra-red Sensor
+## Infra-red Sensor
 
 
 |      HW-201      |     Raspberry Pi   |
@@ -30,3 +30,13 @@ There are 7 pins on the TOLED board: GND, VCC, SCL, SDA(or SDAIN), RST, SA0(or D
 |     VCC       |       3.3V     |
 |     GND       |      Any GND Pin      |
 |     OUT        |      GPIO10   |
+
+## The Button
+
+
+|      Button     |     Raspberry Pi   |
+| :-------------: | :-------------: |
+|     Any Left Side Pin       |       GPIO20     |
+|     Any Right Side Pin      |       GPIO21      |
+
+
