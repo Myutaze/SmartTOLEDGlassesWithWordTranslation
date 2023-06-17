@@ -50,7 +50,7 @@ GPIO.output(20, GPIO.HIGH)
 # This is for setting your drive in the code, remember you need to have the client_secrets.json
 # in the same directory as where this code is. You can search online how you can access to your Google Drive from python via API
 # You can check this youtube video about it: https://www.youtube.com/watch?v=2mnKE9IERt4
-# you may also need a settings.yaml file if you don't want to authenticate each time for google drive. You search online to learn more about it.
+# you may also need credentials.json and settings.yaml file if you don't want to authenticate each time for google drive. You search online to learn more about it.
 gauth = GoogleAuth()
 
 drive = GoogleDrive(gauth)
