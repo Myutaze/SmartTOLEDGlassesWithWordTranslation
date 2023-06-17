@@ -10,6 +10,8 @@ https://www.youtube.com/watch?v=2mnKE9IERt4
 
 You can also search for something called settings.yaml file in case you don't want to authenticate each time you run the code, i will be using that. The way i do it is a little diffrent than the video because we are going to place our picture in a specific folder rather than to the root of drive, it isn't difficult to understand. If you don't understand a line of code, internet is your friend.
 
+For word translation on the main PC we will also need a text detection. For this we use EAST Detector for Text Detection (https://github.com/ZER-0-NE/EAST-Detector-for-text-detection-using-OpenCV). You can download the frozen_east_text_detection.pb from there, we will be using that file for word detection.
+
 # Weather and Currency Exchange API
 
 Weather and Currency Exchange info from the internet through API. The 2 websites i used for this are:
@@ -19,3 +21,5 @@ Weather and Currency Exchange info from the internet through API. The 2 websites
 - freecurrencyapi.net (which became currencyapi.com)
 
 You don't have to choose those 2 websites you can choose any provider. You will need to read the documentation of those providers on how to get the API links or keys. Usually they explain it on their domain on to how to implement it.
+
+
