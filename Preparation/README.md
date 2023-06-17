@@ -8,7 +8,7 @@ But for Word Translation, we will take a picture of a word from the camera and s
 
 https://www.youtube.com/watch?v=2mnKE9IERt4
 
-You can also search for something called settings.yaml file in case you don't want to authenticate each time you run the code, i will be using that. The way i do it is a little diffrent than the video because we are going to place our picture in a specific folder rather than to the root of drive, it isn't difficult to understand. If you don't understand a line of code, internet is your friend. Don't forget to put your Credentials.json (and if you are using it, the settings.yaml file too) in the same directory as your python code in the main PC.
+You can also search for something called settings.yaml file along with credentials.json in case you don't want to authenticate each time you run the code, i will be using that. The way i do it is a little diffrent than the video because we are going to place our picture in a specific folder rather than to the root of drive, it isn't difficult to understand. If you don't understand a line of code, internet is your friend. Don't forget to put your client_secret.json (and if you are using it, the settings.yaml and credentials.json files too) in the same directory as your python code in the main PC.
 
 For word translation on the main PC we will also need a text detection. For this we use EAST Detector for Text Detection (https://github.com/ZER-0-NE/EAST-Detector-for-text-detection-using-OpenCV). You can download the frozen_east_text_detection.pb from there, we will be using that file for word detection. Keep that file in the same directory as your python code for word translation on the main PC.
 
