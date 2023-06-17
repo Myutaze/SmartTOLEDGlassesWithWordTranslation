@@ -8,6 +8,14 @@ But for Word Translation, we will take a picture of a word from the camera and s
 
 https://www.youtube.com/watch?v=2mnKE9IERt4
 
-You can also search for something called settings.yaml file in case you don't want to authenticate each time you run the code, i will be using that. The way i do it is a little diffrent than the video because we are going to place our picture in a specific folder rather than to the root of drive but it is not complicated, you should be able to follow.
+You can also search for something called settings.yaml file in case you don't want to authenticate each time you run the code, i will be using that. The way i do it is a little diffrent than the video because we are going to place our picture in a specific folder rather than to the root of drive, it isn't difficult to understand. If you don't understand a line of code, internet is your friend.
 
 # Weather and Currency Exchange API
+
+Weather and Currency Exchange info from the internet through API. The 2 websites i used for this are:
+
+Openweathermap.com
+
+freecurrencyapi.net (which became currencyapi.com)
+
+You don't have to choose those 2 websites you can choose any provider. You will need to read the documentation of those providers on how to get the API links or keys. Usually they explain it on their domain on to how to implement it.
