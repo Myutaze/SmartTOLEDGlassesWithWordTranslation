@@ -183,7 +183,7 @@ def text_detector(image):
 
 
 # We prepare our Google drive to retrieve the picture taken by the Raspberry Pi
-# That word on that picture will be used to translate it. Be sure to have the credentials.json(and setting.yaml if you are using it)
+# That word on that picture will be used to translate it. Be sure to have the client_secrets.json (and credentials.json and setting.yaml if you are using it)
 # in the same directory as this python code file.
 
 gauth = GoogleAuth()
