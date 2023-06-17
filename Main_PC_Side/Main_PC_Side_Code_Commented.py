@@ -2,7 +2,7 @@
 
 # Importing the libraries
 import time
-import tensorflow as tf
+import tensorflow as tf	 # tensorflow and keras are the main packages for this AI
 from keras.preprocessing.image import ImageDataGenerator
 import h5py #The Library responsible for saving trained data
 from numpy import loadtxt
