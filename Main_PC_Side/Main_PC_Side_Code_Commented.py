@@ -4,7 +4,7 @@
 import time
 import tensorflow as tf
 from keras.preprocessing.image import ImageDataGenerator
-import h5py #Yapay zekanın öğrendiğini kaydetme kütüpanesi
+import h5py #The Library responsible for saving trained data
 from numpy import loadtxt
 from keras.models import load_model
 from imutils.object_detection import non_max_suppression
@@ -12,10 +12,12 @@ from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
 
 
-
+# We use ANN for the AI method, it is a topic on its own, so if you want learn more about it, you can find some courses 
+# about deep learning and so on. But know that this method is processing heavy, the trade-off is that it is the one of the most
+# (if not the most) accurate method out there when determining the outcome.
 
 # Preprocessing the Training set
-train_datagen = ImageDataGenerator(rescale = 1./255,
+train_datagen = ImageDataGenerator(rescale = 1./255,    # We scale the mages 
                                    shear_range = 0.2,
                                    zoom_range = 0.2,
                                    horizontal_flip = True)
