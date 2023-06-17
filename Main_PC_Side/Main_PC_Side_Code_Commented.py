@@ -183,7 +183,8 @@ def text_detector(image):
 
 
 # We prepare our Google drive to retrieve the picture taken by the Raspberry Pi
-# That word on that picture will be used to translate it
+# That word on that picture will be used to translate it. Be sure to have the credentials.json(and setting.yaml if you are using it)
+# in the same directory as this python code file.
 
 gauth = GoogleAuth()
 
@@ -217,7 +218,7 @@ while True:
 	#Here is where we predict the word:
 		try:
 			pic = cv2.imread('word.jpg')
-			array = pic  # ,image2,image3,image4,image5,image6]
+			array = pic  
 			pic0 = cv2.resize(array, (640, 320), interpolation=cv2.INTER_AREA)
 			text_detector(pic0)
 			time.sleep(0.2)
