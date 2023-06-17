@@ -12,14 +12,15 @@ You can also search for something called settings.yaml file in case you don't wa
 
 For word translation on the main PC we will also need a text detection. For this we use EAST Detector for Text Detection (https://github.com/ZER-0-NE/EAST-Detector-for-text-detection-using-OpenCV). You can download the frozen_east_text_detection.pb from there, we will be using that file for word detection. Keep that file in the same directory as your python code for word translation on the main PC.
 
-For the 50 words, i opened up a powerpoint presentation for each word and copy-pasted 720 times the same word on each page then i changed each of their font. I provided the RAR file containing it. Now in the folder where you will run the python code, make a folders as the following:
+For the 50 words, i opened up a powerpoint presentation for each word and copy-pasted 720 times the same word on each page then i changed each of their font. I would have provided the RAR file containing it but Github doesn't accept big files, you can choose the words you want and do the same method as me. You open a powerpoint, on the first slide write any word you want, make it big like 72 or 48 size font. Then duplicate slide until you have 720 total, now the grindy part: visit each slide and change the word's font. You will do this once but save it because it will be reused for the other words. After that you can export all slides as png into a folder named after the word you want to translate (so if the word you want to translate is "Time" then when exporting the slides as png export it in a folder called "Time"). This is for 1 word, now you can do for the rest, all you have to do is, on the powerpoint use the find and replace tool and change the word then repeat the process of exportation.
+
+Now in the folder where you will run the python code, make a folders as the following:
 
 -dataset:
-        - predict
         - test_set
         - training_set
         
-  so inside the dataset folder you have 3 more folders. In the test_set and training_set 
+So inside the dataset folder you have 3 more folders. In the test_set and training_set put all your 50 word folders. These folders will be used as training and test for the AI.
 
 # Weather and Currency Exchange API
 
