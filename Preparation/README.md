@@ -16,9 +16,9 @@ For the 50 words, i opened up a powerpoint presentation for each word and copy-p
 
 Now in the folder where you will run the python code, make a folders as the following:
 
--dataset:
-        - test_set
-        - training_set
+- dataset:
+  - test_set
+  - training_set
         
 So inside the dataset folder you have 3 more folders. In the test_set and training_set put all your 50 word folders. These folders will be used as training and test for the AI.
 
