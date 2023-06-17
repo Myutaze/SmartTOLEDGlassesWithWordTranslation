@@ -1,4 +1,4 @@
-# Convolutional Neural Network
+# Convolutional Neural Network (a subtype of ANN)
 
 # Importing the libraries
 import time
@@ -17,8 +17,8 @@ from pydrive.drive import GoogleDrive
 # (if not the most) accurate method out there when determining the outcome.
 
 # Preprocessing the Training set
-train_datagen = ImageDataGenerator(rescale = 1./255,    # We scale the mages 
-                                   shear_range = 0.2,
+train_datagen = ImageDataGenerator(rescale = 1./255,    # We scale the images into a lower size to save cpu processing
+                                   shear_range = 0.2,	# We do this for both the test and training sets
                                    zoom_range = 0.2,
                                    horizontal_flip = True)
 training_set = train_datagen.flow_from_directory('dataset/training_set',
@@ -33,7 +33,11 @@ test_set = test_datagen.flow_from_directory('dataset/test_set',
                                             batch_size = 32,
                                             class_mode = 'categorical')
 
-# Initialising the CNN
+# Note that the below steps is only done once for training on the data because we won't be training it over and over
+# everytime we run the code, it becomes time consuming. Instead we save the trained model and use it later.
+
+
+# Initialising the CNN (a subtype of ANN)
 #cnn = tf.keras.models.Sequential()
 
 # Step 1 - Convolution
@@ -62,11 +66,12 @@ test_set = test_datagen.flow_from_directory('dataset/test_set',
 # Training the CNN on the Training set and evaluating it on the Test set
 #cnn.fit(x = training_set, validation_data = test_set, epochs = 4)
 
-#cnn.save("cnn_modelrankup.h5") Burda kaydediyon "cnn_modelrankup" ismi ile ve uzantısı .h5
+#cnn.save("cnn_model.h5") #Here we save the model after traininf the model is done.
 #print("Saved cnn_modelrankup to disk")
 
-cnn = load_model('cnn_modelrankup.h5') #burda yüklüyon
-cnn.summary() #burda onun bilgisini veriyo
+
+cnn = load_model('cnn_model.h5') #Now we load the trained model
+cnn.summary() #We print the summary of the model, to see what it is, its not necesary if you don't want to see it
 
 
 
@@ -83,14 +88,14 @@ import shutil
 from PIL import Image
 
 
-net = cv2.dnn.readNet("frozen_east_text_detection.pb")
+net = cv2.dnn.readNet("frozen_east_text_detection.pb") # We use the text detection file here
 
 a=0
 b=0
 c=1
 d=0
 
-
+# The text detection function:
 def text_detector(image):
 	#hasFrame, image = cap.read()
 	orig = image
@@ -169,7 +174,7 @@ def text_detector(image):
 		endX = int(endX * rW)
 		endY = int(endY * rH)
 
-		# draw the bounding box on the image
+		# draw the bounding box on the image and crop it
 		cv2.rectangle(orig, (startX, startY), (endX, endY), (0, 255, 0), 3)
 		cv2.imwrite("crop.jpg", orig)
 		im = Image.open(r"crop.jpg")
@@ -177,12 +182,14 @@ def text_detector(image):
 		im2 = im1.save("pred.jpg")
 
 
+# We prepare our Google drive to retrieve the picture taken by the Raspberry Pi
+# That word on that picture will be used to translate it
 
 gauth = GoogleAuth()
 
 drive = GoogleDrive(gauth)
 
-fileList = drive.ListFile({'q': " '1d-vlp_CJnSjtslRSY3Mh2P26ZsNq2uSY' in parents"}).GetList()
+fileList = drive.ListFile({'q': " 'your drive id' in parents"}).GetList()
 for file in fileList:
 	print('Title: %s, ID: %s' % (file['title'], file['id']))
 	drive.CreateFile({'id': file['id']}).Delete()
@@ -191,8 +198,9 @@ J = 0
 
 while True:
 
-	fileList = drive.ListFile({'q': " '1d-vlp_CJnSjtslRSY3Mh2P26ZsNq2uSY' in parents"}).GetList()
-
+	fileList = drive.ListFile({'q': " 'your drive id' in parents"}).GetList()
+	#This will continously check if there is a file in drive and if there is, it will proceed to the if ( J == 1 ) part
+	# to start predicting the word to translate
 	for file in fileList:
 		c = file['id']
 		if(c!=d):
@@ -206,7 +214,7 @@ while True:
 		except:
 			pass
 	if( J == 1 ):
-
+	#Here is where we predict the word:
 		try:
 			pic = cv2.imread('word.jpg')
 			array = pic  # ,image2,image3,image4,image5,image6]
@@ -217,7 +225,7 @@ while True:
 			test_image = image.img_to_array(test_image)
 			test_image = np.expand_dims(test_image, axis=0)
 			result = cnn.predict(test_image)
-
+			#Then compare the predicted word and translate it
 			if result[0][0] == 1:
 				prediction = "All = Hepsi"
 
@@ -370,17 +378,17 @@ while True:
 
 			else:
 				prediction = "Unknown"
-
+			#We print the translated word
 			print(prediction)
-
+			#Then write it on a text file and upload it to drive. 
 			with open('translation.txt', 'w') as f:
 				f.write(prediction)
 			upload_text = 'translation.txt'
-			gtext = drive.CreateFile({'parents': [{'id': '1d-vlp_CJnSjtslRSY3Mh2P26ZsNq2uSY'}]})
+			gtext = drive.CreateFile({'parents': [{'id': 'your drive id'}]})
 			gtext.SetContentFile(upload_text)
 			gtext.Upload()
 			print("Uploaded")
-			fileList = drive.ListFile({'q': " '1d-vlp_CJnSjtslRSY3Mh2P26ZsNq2uSY' in parents"}).GetList()
+			fileList = drive.ListFile({'q': " 'your drive id' in parents"}).GetList()
 			for file in fileList:
 				print('Title: %s, ID: %s' % (file['title'], file['id']))
 				time.sleep(5)
@@ -389,7 +397,7 @@ while True:
 
 		except:
 			pass
-
+	
 		J = 0
 
 
