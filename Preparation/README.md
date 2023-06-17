@@ -14,8 +14,8 @@ You can also search for something called settings.yaml file in case you don't wa
 
 Weather and Currency Exchange info from the internet through API. The 2 websites i used for this are:
 
-Openweathermap.com
+- Openweathermap.com
 
-freecurrencyapi.net (which became currencyapi.com)
+- freecurrencyapi.net (which became currencyapi.com)
 
 You don't have to choose those 2 websites you can choose any provider. You will need to read the documentation of those providers on how to get the API links or keys. Usually they explain it on their domain on to how to implement it.
