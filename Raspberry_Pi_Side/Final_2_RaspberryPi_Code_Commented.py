@@ -20,7 +20,7 @@
 # THE SOFTWARE.
 
 
-
+#Be sure to have installed all the missing packages.
 import datetime
 import time
 import Adafruit_GPIO.SPI as SPI
@@ -89,6 +89,8 @@ def picture():
 		# We delete the file after 2 seconds because we don't need duplicate files in drive. In the mean time,
 		# the picture is already extracted by the Word translating pc
                 for file in fileList:
+		    #This will print the content of that drive folder, we use to check what we have at this point of code
+		    # It is for testing purposes, if we indeed deleted the file
                     print('Title: %s, ID: %s' % (file['title'], file['id']))
                     time.sleep(2)
                     drive.CreateFile({'id': file['id']}).Delete()
