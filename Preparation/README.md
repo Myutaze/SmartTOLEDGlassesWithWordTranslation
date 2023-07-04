@@ -15,7 +15,7 @@ For word translation on the main PC we will also need a text detection. For this
  - The picture we took from Raspberry Pi:
 
 
-<img src = "https://github.com/Myutaze/SmartTOLEDGlassesWithWordTranslation/assets/123553691/2720f8cc-3023-4033-bb43-00221ca4ae22" width = "300" >
+<img src = "https://github.com/Myutaze/SmartTOLEDGlassesWithWordTranslation/assets/123553691/f7c428c0-2db3-4bc4-afd7-d5c67d0ba29d" width = "300" >
 
 <br>
 <br>
@@ -23,9 +23,8 @@ For word translation on the main PC we will also need a text detection. For this
 - The cropped image after sending the image to the main PC:
 
 
+<img src = "https://github.com/Myutaze/SmartTOLEDGlassesWithWordTranslation/assets/123553691/aee06e04-6ae4-424e-a49c-56730708901f" width = "300" >
 
-
-<img src = "https://github.com/Myutaze/SmartTOLEDGlassesWithWordTranslation/assets/123553691/4bf516b0-2ddc-44a1-80aa-da679ee61930" width = "300" >
 <br>
 <br>
 
