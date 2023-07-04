@@ -1,13 +1,14 @@
 # Full connection
 
-<img src = "https://github.com/Myutaze/SmartTOLEDGlassesWithWordTranslation/assets/123553691/a6598ca4-4759-44f1-8d5d-3d4604470f40" width = "500">
+<img src = "https://github.com/Myutaze/SmartTOLEDGlassesWithWordTranslation/assets/123553691/e5fed023-aac9-4cfa-89b7-2e7cd6e92c83" width = "500">
+
 <br>
 
 The Camera goes straight to the port it is supposed to.
 
 Here is the Raspberry Pi's pinout:
 
-<img src = "https://github.com/Myutaze/SmartTOLEDGlassesWithWordTranslation/assets/123553691/899b90e3-2aa7-40eb-ba45-f9d6ac54ea4d" width = "400" >
+<img src = "https://github.com/Myutaze/SmartTOLEDGlassesWithWordTranslation/assets/123553691/1f1b40d6-cab6-4acf-9f55-1758c2df7adf" width = "400" >
 
 ## Toled Screen Connection
 
